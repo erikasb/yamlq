@@ -134,17 +134,15 @@ class OrOperation(BinaryOperation):
 
 def pushField(str, loc, toks):
     exprStack.append(Field(toks[0]))
-    # pushFirst(str, loc, toks)
 
 
 def pushString(str, loc, toks):
     exprStack.append(StringConstant(toks[0]))
-    # pushFirst(str, loc, toks)
 
 
 def pushNum(str, loc, toks):
     exprStack.append(NumberConstant(toks[0]))
-    # pushFirst(str, loc, toks)
+
 
 ops = {
     "==": EqualsOperation,
@@ -152,6 +150,7 @@ ops = {
     "and": AndOperation,
     "or": OrOperation
 }
+
 
 def pushOp(str, loc, toks):
     right, left = (exprStack.pop(), exprStack.pop())
