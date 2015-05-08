@@ -29,7 +29,7 @@ class Field(Expression):
             if isinstance(obj, dict):
                 return get_something(key[1:], obj.get(key[0]))
             elif isinstance(obj, list):
-                return get_something(key[1:], int(obj[key[0]]))
+                return get_something(key[1:], obj[int(key[0])])
             else:
                 return obj
 
